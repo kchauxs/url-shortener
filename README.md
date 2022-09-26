@@ -19,6 +19,41 @@ A simple URL shorte
 ## Feactures 🦸
 
 - [x] Shorten a URL
-- [x] Return shortened URL 
+- [x] Return shortened URL
 - [x] Seed
 - [x] Swagger documentation
+- [x] Dockerfile
+
+## Install
+
+1. Clone project
+2. `yarn install`
+3. Clone the `.env.template` file and rename it to `.env`
+4. Change environment variables
+5. Running the app `yarn start:dev`
+
+## Install on docker
+
+Build the image
+
+```bash
+docker build -t url-shortener-api .
+```
+
+Create a container based on the image
+
+```bash
+docker run -p 3033:3033 -d --name my-api url-shortener-api
+```
+
+## Run SEED
+
+```bash
+curl -X 'GET' 'http://localhost:3033/api/v1/seed' -H 'accept: */*'
+```
+
+## Swagger documentation
+
+```bash
+http://localhost:3033/api
+```
