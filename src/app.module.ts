@@ -9,7 +9,7 @@ import { Url } from './url/entities/url.entity';
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: 'URL.sqlite',
+      database: `${process.env.DB_NAME}.sqlite`,
       entities: [Url],
       synchronize: process.env.STAGE === 'prod' ? false : true,
     }),

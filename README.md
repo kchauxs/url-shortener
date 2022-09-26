@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-# URL-Shortener ✂️
+# URL-Shortener ✂️ 🔗
 
 A simple URL shorte
 
@@ -19,4 +19,6 @@ A simple URL shorte
 ## Feactures 🦸
 
 - [x] Shorten a URL
-- [x] Return shortened URL
+- [x] Return shortened URL 
+- [x] Seed
+- [x] Swagger documentation

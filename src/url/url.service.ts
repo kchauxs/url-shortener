@@ -31,13 +31,14 @@ export class UrlService {
       );
 
     const urlCode = nanoid(10);
-    const baseURL = `http://localhost:${this.configService.get(
-      'PORT',
-    )}/${this.configService.get('PREFIX')}/url`;
+    const baseURL = `${this.configService.get('HOST_API')}/url`;
 
     try {
       let url = await this.urlRepository.findOneBy({ longUrl });
-      if (url) return { url: url.shortUrl };
+      if (url) {
+        delete url.id;
+        return url;
+      }
       const shortUrl = `${baseURL}/${urlCode}`;
       url = this.urlRepository.create({
         urlCode,
@@ -45,7 +46,7 @@ export class UrlService {
         shortUrl,
       });
       this.urlRepository.save(url);
-      return { url: url.shortUrl };
+      return url;
     } catch (error) {
       this.handleDBExceptions(error);
     }
