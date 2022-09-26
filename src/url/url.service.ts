@@ -63,6 +63,16 @@ export class UrlService {
     return urls;
   }
 
+  async deleteAllProducts() {
+    const query = this.urlRepository.createQueryBuilder('url');
+
+    try {
+      return await query.delete().where({}).execute();
+    } catch (error) {
+      this.handleDBExceptions(error);
+    }
+  }
+
   private handleDBExceptions(error: any) {
     if (error.code === '23505') throw new BadRequestException(error.detail);
     this.logger.error(error);

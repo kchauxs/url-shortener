@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UrlModule } from './url/url.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Url } from './url/entities/url.entity';
+import { SeedModule } from './seed/seed.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { Url } from './url/entities/url.entity';
       synchronize: process.env.STAGE !== 'prod',
     }),
     UrlModule,
+    SeedModule,
   ],
 })
 export class AppModule {}

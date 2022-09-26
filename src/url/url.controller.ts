@@ -39,4 +39,9 @@ export class UrlController {
   // findAllUrls() {
   //   return this.urlService.findAll();
   // }
+
+  @Get()
+  findAllUrls() {
+    return this.urlService.findAll();
+  }
 }
