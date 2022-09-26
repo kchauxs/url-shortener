@@ -35,11 +35,6 @@ export class UrlController {
     return { url: url.longUrl };
   }
 
-  // @Get()
-  // findAllUrls() {
-  //   return this.urlService.findAll();
-  // }
-
   @Get()
   findAllUrls() {
     return this.urlService.findAll();
