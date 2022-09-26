@@ -11,7 +11,7 @@ import { Url } from './url/entities/url.entity';
       type: 'sqlite',
       database: `${process.env.DB_NAME}.sqlite`,
       entities: [Url],
-      synchronize: process.env.STAGE === 'prod' ? false : true,
+      synchronize: process.env.STAGE !== 'prod',
     }),
     UrlModule,
   ],
