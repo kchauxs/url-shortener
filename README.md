@@ -32,7 +32,7 @@ A simple URL shorte
 4. Change environment variables
 5. Running the app `yarn start:dev`
 
-## Install on docker
+## Install on docker 🐋
 
 Build the image
 
@@ -40,7 +40,7 @@ Build the image
 docker build -t url-shortener-api .
 ```
 
-Create a container based on the image
+Create a container based on the image 📦
 
 ```bash
 docker run -p 3033:3033 -d --name my-api url-shortener-api
@@ -54,6 +54,4 @@ curl -X 'GET' 'http://localhost:3033/api/v1/seed' -H 'accept: */*'
 
 ## Swagger documentation
 
-```bash
-http://localhost:3033/api
-```
+`http://localhost:3033/api`
