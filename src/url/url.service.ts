@@ -58,12 +58,12 @@ export class UrlService {
     return url;
   }
 
-  async findAll() {
+  async findAllUrls() {
     let urls = await this.urlRepository.find();
     return urls;
   }
 
-  async deleteAllProducts() {
+  async deleteAllUrls() {
     const query = this.urlRepository.createQueryBuilder('url');
 
     try {

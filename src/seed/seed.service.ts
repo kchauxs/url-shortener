@@ -28,6 +28,6 @@ export class SeedService {
     await this.urlRepository.save(seedUrls);
   }
   private async deleteTables() {
-    await this.urlService.deleteAllProducts();
+    await this.urlService.deleteAllUrls();
   }
 }
